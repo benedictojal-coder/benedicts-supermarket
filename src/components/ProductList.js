@@ -1,7 +1,10 @@
-// src/components/ProductList.jsx
+"use client";
 import products from "@/data/products";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductList() {
+  const { addToCart } = useCart();
+
   return (
     <section className="p-4">
       <h2 className="text-2xl font-bold mb-6 text-center">Our Products</h2>
@@ -21,6 +24,12 @@ export default function ProductList() {
               {product.description}
             </p>
             <p className="font-bold mt-2 text-green-700">Ksh {product.price}</p>
+            <button
+              onClick={() => addToCart(product)}
+              className="mt-2 bg-green-500 text-white py-1 px-3 rounded hover:bg-green-600 w-full"
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
