@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Benedict's Supermarket E-commerce Website
+
+This is a **Next.js** project for Benedict's Supermarket, bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Features
+
+- Responsive header with logo, navigation, and cart dropdown
+- Product catalog display
+- Price list table with original price, discount, and discounted price
+- Loyalty program signup form for new customers
+- Mobile-friendly layout with hamburger menu
+- Professional navigation: Home, Shop (dropdown), Deals, About Us, Contact Us
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/)
+- React
+- JavaScript
+- Tailwind CSS (optional, if used)
+- Vercel (for deployment)
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
 
 ```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+
+
+Install dependencies:
+
+npm install
+# or
+yarn install
+
+
+
+Run the development server:
+
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+
+Open http://localhost:3000
+ in your browser to view the site.
+
+Deployment
+
+This project is ready to deploy on Vercel:
+
+Go to Vercel
+ → New Project
+
+Connect your GitHub account
+
+Select your repository
+
+Vercel will automatically detect it’s a Next.js project
+
+Click Deploy → your site will be live at a .vercel.app URL
+
+Project Structure
+/components
+  Header.js
+  ProductList.js
+  PriceList.js
+  LoyaltySignup.js
+/pages or /app
+  page.js (home page)
+public
+  logo.png
+package.json
+README.md
+
+
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
