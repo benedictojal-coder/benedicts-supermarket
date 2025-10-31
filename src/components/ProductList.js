@@ -1,26 +1,29 @@
-"use client";
-import { useCart } from "../context/CartContext";
-import products from "../data/products";
+// src/components/ProductList.jsx
+import products from "@/data/products";
 
-export default function ProductsList() {
-  const { addToCart } = useCart();
-
+export default function ProductList() {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem", padding: "2rem" }}>
-      {products.map((product) => (
-        <div key={product.id} style={{ border: "1px solid #ddd", padding: "1rem", borderRadius: "8px" }}>
-          <img src={product.image} alt={product.name} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
-          <h3>{product.name}</h3>
-          <p style={{ color: "red" }}>Ksh {product.price}</p>
-          <p>{product.description}</p>
-          <button
-            onClick={() => addToCart(product)}
-            style={{ backgroundColor: "green", color: "white", padding: "0.5rem 1rem", borderRadius: "5px" }}
+    <section className="p-4">
+      <h2 className="text-2xl font-bold mb-6 text-center">Our Products</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="bg-white rounded shadow p-4 flex flex-col items-center transition-transform hover:scale-105"
           >
-            Add to Cart
-          </button>
-        </div>
-      ))}
-    </div>
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-40 sm:h-48 object-contain mb-2"
+            />
+            <h3 className="font-semibold text-lg text-center">{product.name}</h3>
+            <p className="text-gray-600 text-center text-sm sm:text-base">
+              {product.description}
+            </p>
+            <p className="font-bold mt-2 text-green-700">Ksh {product.price}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

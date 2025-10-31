@@ -1,19 +1,12 @@
-// components/LoyaltySignup.js
+// src/components/LoyaltySignup.jsx
 "use client";
 import { useState } from "react";
 
 export default function LoyaltySignup() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
-
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,10 +16,14 @@ export default function LoyaltySignup() {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2>Loyalty Program Signup</h2>
-      {submitted && <p style={{ color: "green" }}>Thank you for signing up!</p>}
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem", maxWidth: "400px" }}>
+    <section className="p-4">
+      <h2 className="text-2xl font-bold mb-4">Join Our Loyalty Program</h2>
+      {submitted && <p className="text-green-600 mb-4">Thank you for signing up!</p>}
+
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 max-w-md mx-auto bg-white p-4 rounded shadow"
+      >
         <input
           type="text"
           name="name"
@@ -34,7 +31,7 @@ export default function LoyaltySignup() {
           value={formData.name}
           onChange={handleChange}
           required
-          style={{ padding: "0.5rem", borderRadius: "5px", border: "1px solid #ccc" }}
+          className="w-full p-2 border rounded"
         />
         <input
           type="email"
@@ -43,7 +40,7 @@ export default function LoyaltySignup() {
           value={formData.email}
           onChange={handleChange}
           required
-          style={{ padding: "0.5rem", borderRadius: "5px", border: "1px solid #ccc" }}
+          className="w-full p-2 border rounded"
         />
         <input
           type="tel"
@@ -52,23 +49,15 @@ export default function LoyaltySignup() {
           value={formData.phone}
           onChange={handleChange}
           required
-          style={{ padding: "0.5rem", borderRadius: "5px", border: "1px solid #ccc" }}
+          className="w-full p-2 border rounded"
         />
         <button
           type="submit"
-          style={{
-            padding: "0.75rem",
-            background: "green",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-            fontWeight: "bold",
-          }}
+          className="w-full bg-green-500 text-white p-2 rounded font-bold hover:bg-green-600"
         >
           Sign Up
         </button>
       </form>
-    </div>
+    </section>
   );
 }

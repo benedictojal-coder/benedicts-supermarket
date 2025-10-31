@@ -1,30 +1,14 @@
+// src/components/Footer.jsx
 "use client";
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: "#222",
-        color: "#fff",
-        padding: "3rem 2rem",
-        marginTop: "2rem",
-        fontFamily: "sans-serif",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          gap: "2rem",
-          maxWidth: "1200px",
-          margin: "0 auto",
-        }}
-      >
+    <footer className="bg-gray-900 text-white py-10 px-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Company Links */}
         <div>
-          <h3 style={{ fontWeight: "bold", marginBottom: "1rem" }}>Our Company</h3>
-          <ul style={{ listStyle: "none", padding: 0 }}>
+          <h3 className="font-bold mb-3">Our Company</h3>
+          <ul className="space-y-1">
             <li>About Us</li>
             <li>Careers</li>
             <li>Our Stories</li>
@@ -35,8 +19,8 @@ export default function Footer() {
 
         {/* Policies */}
         <div>
-          <h3 style={{ fontWeight: "bold", marginBottom: "1rem" }}>Our Policies</h3>
-          <ul style={{ listStyle: "none", padding: 0 }}>
+          <h3 className="font-bold mb-3">Our Policies</h3>
+          <ul className="space-y-1">
             <li>Privacy Hub</li>
             <li>Privacy Policy</li>
             <li>Terms & Conditions</li>
@@ -47,23 +31,23 @@ export default function Footer() {
 
         {/* Rewards & Contact */}
         <div>
-          <h3 style={{ fontWeight: "bold", marginBottom: "1rem" }}>Earn Rewards Everytime You Shop</h3>
+          <h3 className="font-bold mb-3">Earn Rewards Everytime You Shop</h3>
           <p>📞 +254 795 673902</p>
           <p>📮 P.O. BOX 61600 - 00200, Nairobi, Kenya</p>
           <p>✉️ info@benedict.online</p>
-          <p>Connect with us on our social media pages:</p>
-          <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.5rem" }}>
-            <span style={{ fontSize: "1.5rem", cursor: "pointer" }}>📘</span> {/* Facebook */}
-            <span style={{ fontSize: "1.5rem", cursor: "pointer" }}>🐦</span> {/* Twitter */}
-            <span style={{ fontSize: "1.5rem", cursor: "pointer" }}>📸</span> {/* Instagram */}
-            <span style={{ fontSize: "1.5rem", cursor: "pointer" }}>▶️</span> {/* YouTube */}
+          <p className="mt-2">Connect with us on social media:</p>
+          <div className="flex gap-3 mt-1 text-2xl">
+            <span className="cursor-pointer">📘</span>
+            <span className="cursor-pointer">🐦</span>
+            <span className="cursor-pointer">📸</span>
+            <span className="cursor-pointer">▶️</span>
           </div>
         </div>
 
         {/* Payment Methods */}
         <div>
-          <h3 style={{ fontWeight: "bold", marginBottom: "1rem" }}>Payment Methods</h3>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+          <h3 className="font-bold mb-3">Payment Methods</h3>
+          <div className="flex flex-col gap-1">
             <span>💳 Visa</span>
             <span>💳 Mastercard</span>
             <span>📱 M-Pesa</span>
@@ -73,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{ textAlign: "center", marginTop: "2rem", fontSize: "0.9rem", opacity: 0.7 }}>
+      <div className="text-center mt-8 text-gray-400 text-sm">
         &copy; {new Date().getFullYear()} Benedict’s Supermarket. All rights reserved.
       </div>
     </footer>

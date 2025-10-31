@@ -1,4 +1,4 @@
-// components/PriceList.js
+// src/components/PriceList.jsx
 "use client";
 
 const products = [
@@ -26,53 +26,33 @@ const products = [
 
 export default function PriceList() {
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2>Price List</h2>
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          marginTop: "1rem",
-        }}
-      >
-        <thead>
-          <tr>
-            <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
-              Item
-            </th>
-            <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
-              Original Price
-            </th>
-            <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
-              Discount (%)
-            </th>
-            <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
-              Price After Discount
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((item) => {
-            const discountedPrice = item.price - (item.price * item.discount) / 100;
-            return (
-              <tr key={item.id}>
-                <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
-                  {item.name}
-                </td>
-                <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
-                  KES {item.price}
-                </td>
-                <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
-                  {item.discount}%
-                </td>
-                <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
-                  KES {discountedPrice}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+    <section className="p-4">
+      <h2 className="text-2xl font-bold mb-4">Price List</h2>
+      <div className="overflow-x-auto">
+        <table className="min-w-[600px] w-full border-collapse bg-white rounded shadow">
+          <thead className="bg-gray-200">
+            <tr>
+              <th className="px-4 py-2 text-left">Item</th>
+              <th className="px-4 py-2 text-right">Original Price</th>
+              <th className="px-4 py-2 text-right">Discount (%)</th>
+              <th className="px-4 py-2 text-right">Price After Discount</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((item) => {
+              const discountedPrice = item.price - (item.price * item.discount) / 100;
+              return (
+                <tr key={item.id} className="border-b">
+                  <td className="px-4 py-2">{item.name}</td>
+                  <td className="px-4 py-2 text-right">KES {item.price}</td>
+                  <td className="px-4 py-2 text-right">{item.discount}%</td>
+                  <td className="px-4 py-2 text-right">KES {discountedPrice}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
   );
 }
